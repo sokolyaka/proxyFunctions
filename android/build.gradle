@@ -1,5 +1,28 @@
 apply plugin: 'com.android.library'
 
+ext {
+    bintrayRepo = 'maven'
+    bintrayName = 'proxyFunctionsAndroid'
+
+    publishedGroupId = 'com.github.sokolyaka.proxyFunctions'
+    libraryName = 'Android'
+    artifact = 'android'
+
+    libraryDescription = 'Set of Android-specific proxy functions to wrap method invocations.'
+
+    siteUrl = 'https://github.com/sokolyaka/proxyFunctions'
+    gitUrl = 'https://github.com/sokolyaka/proxyFunctions.git'
+
+    libraryVersion = '1.0.0'
+
+    developerId = 'sokolyaka'
+    developerName = 'Oleg Sokolov'
+    developerEmail = 'sokolov.ob@gmail.com'
+
+    licenseName = 'The Apache Software License, Version 2.0'
+    licenseUrl = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+    allLicenses = ["Apache-2.0"]
+}
 android {
     compileSdkVersion 28
 
@@ -28,3 +51,6 @@ dependencies {
     implementation 'com.android.support:appcompat-v7:28.0.0'
     testImplementation 'junit:junit:4.12'
 }
+
+apply from: 'https://raw.githubusercontent.com/nuuneoi/JCenter/master/installv1.gradle'
+apply from: 'https://raw.githubusercontent.com/nuuneoi/JCenter/master/bintrayv1.gradle'
