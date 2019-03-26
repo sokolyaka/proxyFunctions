@@ -10,10 +10,10 @@ import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 
 public class FunctionProxyInvocationHandler implements InvocationHandler {
-    private final IFunctionToInvoke origin;
+    private final Object origin;
     private final IWrappedFunction f;
 
-    public FunctionProxyInvocationHandler(IFunctionToInvoke origin, IWrappedFunction f) {
+    public FunctionProxyInvocationHandler(Object origin, IWrappedFunction f) {
         this.origin = origin;
         this.f = f;
     }
