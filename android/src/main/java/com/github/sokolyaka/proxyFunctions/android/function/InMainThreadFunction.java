@@ -12,7 +12,7 @@ public class InMainThreadFunction implements IWrappedFunction {
 
     public InMainThreadFunction(IWrappedFunction origin) {
         this.origin = origin;
-        handler = new Handler(Looper.myLooper());
+        handler = new Handler(Looper.getMainLooper());
     }
 
     @Override
