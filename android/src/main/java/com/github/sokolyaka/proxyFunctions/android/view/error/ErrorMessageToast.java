@@ -5,10 +5,10 @@ import android.widget.Toast;
 
 import java.lang.ref.WeakReference;
 
-public class ToastErrorMessage implements IErrorMessage {
+public class ErrorMessageToast implements IErrorMessageView {
     private final WeakReference<Context> weakContext;
 
-    public ToastErrorMessage(Context context) {
+    public ErrorMessageToast(Context context) {
         weakContext = new WeakReference<>(context);
     }
 

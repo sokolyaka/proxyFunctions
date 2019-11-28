@@ -6,17 +6,17 @@ import android.content.DialogInterface;
 
 import java.lang.ref.WeakReference;
 
-public class AlertErrorDialog implements IErrorMessage {
+public class ErrorMessageAlertDialog implements IErrorMessageView {
 
     private final WeakReference<Context> weakContext;
     private final CharSequence title;
     private final CharSequence positiveBtnText;
 
-    public AlertErrorDialog(Context context) {
+    public ErrorMessageAlertDialog(Context context) {
         this(context, "Error", "Ok");
     }
 
-    public AlertErrorDialog(Context context, CharSequence title, CharSequence positiveBtnText) {
+    public ErrorMessageAlertDialog(Context context, CharSequence title, CharSequence positiveBtnText) {
         weakContext = new WeakReference<>(context);
         this.title = title;
         this.positiveBtnText = positiveBtnText;
