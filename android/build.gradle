@@ -1,38 +1,13 @@
 apply plugin: 'com.android.library'
 
-ext {
-    bintrayRepo = 'maven'
-    bintrayName = 'proxyFunctionsAndroid'
-
-    publishedGroupId = 'com.github.sokolyaka.proxyFunctions'
-    libraryName = 'Android'
-    artifact = 'android'
-
-    libraryDescription = 'Set of Android-specific proxy functions to wrap method invocations.'
-
-    siteUrl = 'https://github.com/sokolyaka/proxyFunctions'
-    gitUrl = 'https://github.com/sokolyaka/proxyFunctions.git'
-
-    libraryVersion = '1.0.2'
-
-    developerId = 'sokolyaka'
-    developerName = 'Oleg Sokolov'
-    developerEmail = 'sokolov.ob@gmail.com'
-
-    licenseName = 'The Apache Software License, Version 2.0'
-    licenseUrl = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
-    allLicenses = ["Apache-2.0"]
-}
 android {
     compileSdkVersion 28
-
-
 
     defaultConfig {
         minSdkVersion 14
         targetSdkVersion 28
         versionCode 1
-        versionName "1.0.2"
+        versionName "1.0.3"
     }
 
     buildTypes {
@@ -52,5 +27,14 @@ dependencies {
     testImplementation 'junit:junit:4.12'
 }
 
-apply from: 'https://raw.githubusercontent.com/nuuneoi/JCenter/master/installv1.gradle'
-apply from: 'https://raw.githubusercontent.com/nuuneoi/JCenter/master/bintrayv1.gradle'
+ext {
+    publishedGroupId = 'com.github.sokolyaka.proxyFunctions'
+    publishedArtifactId = 'android'
+    publishedVersion = '1.0.3'
+    aarPath = "$buildDir/outputs/aar/${publishedArtifactId}-release.aar"
+
+    GITHUB_USERID = 'sokolyaka'
+    REPOSITORY = 'proxyFunctions'
+}
+
+apply from: 'https://raw.githubusercontent.com/sokolyaka/maven/main/github_maven_android.gradle'

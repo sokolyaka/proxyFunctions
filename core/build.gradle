@@ -1,29 +1,5 @@
 apply plugin: 'java-library'
 
-ext {
-    bintrayRepo = 'maven'
-    bintrayName = 'proxyFunctionsCore'
-
-    publishedGroupId = 'com.github.sokolyaka.proxyFunctions'
-    libraryName = 'core'
-    artifact = 'core'
-
-    libraryDescription = 'Set of proxy functions to wrap method invocations.'
-
-    siteUrl = 'https://github.com/sokolyaka/proxyFunctions'
-    gitUrl = 'https://github.com/sokolyaka/proxyFunctions.git'
-
-    libraryVersion = '1.0.0'
-
-    developerId = 'sokolyaka'
-    developerName = 'Oleg Sokolov'
-    developerEmail = 'sokolov.ob@gmail.com'
-
-    licenseName = 'The Apache Software License, Version 2.0'
-    licenseUrl = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
-    allLicenses = ["Apache-2.0"]
-}
-
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 }
@@ -31,5 +7,13 @@ dependencies {
 sourceCompatibility = "7"
 targetCompatibility = "7"
 
-apply from: 'https://raw.githubusercontent.com/nuuneoi/JCenter/master/installv1.gradle'
-apply from: 'https://raw.githubusercontent.com/nuuneoi/JCenter/master/bintrayv1.gradle'
+ext {
+    publishedGroupId = 'com.github.sokolyaka.proxyFunctions'
+    publishedArtifactId = 'core'
+    publishedVersion = '1.0.0'
+
+    GITHUB_USERID = 'sokolyaka'
+    REPOSITORY = 'proxyFunctions'
+}
+
+apply from: "https://raw.githubusercontent.com/sokolyaka/maven/main/github_maven_java.gradle"
